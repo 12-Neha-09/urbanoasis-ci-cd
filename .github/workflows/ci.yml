@@ -21,7 +21,7 @@ jobs:
 
       - name: Check Node version
         run: node -v
-        
+
       - name: Check npm version
         run: npm -v
 
@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm.cmd run build  
+        run: npm run build  
 
       - name: Run project
-        run: npm.cmd start
+        run: npm start
