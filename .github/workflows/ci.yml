@@ -20,7 +20,10 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm.cmd install
+
+      - name: Build project
+        run: npm.cmd run build  
 
       - name: Run project
-        run: npm start
+        run: npm.cmd start
