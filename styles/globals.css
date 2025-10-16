@@ -4,7 +4,7 @@
 .scrollbar {
     overflow-y: auto;
     scrollbar-width: thin; /* Firefox */
-    scrollbar-color: gray-700 gray-200; /* Firefox */
+    scrollbar-color: black; /* Firefox */
 }
 
 /* For WebKit browsers (Chrome, Safari, Edge) */
