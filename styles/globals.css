@@ -10,7 +10,7 @@
 /* For WebKit browsers (Chrome, Safari, Edge) */
 .scrollbar::-webkit-scrollbar {
     width: 2px;  /* Width of the scrollbar */
-    height: 2px; /* Height of the scrollbar */
+    height: 3px; /* Height of the scrollbar */
 }
 
 .scrollbar::-webkit-scrollbar-thumb {

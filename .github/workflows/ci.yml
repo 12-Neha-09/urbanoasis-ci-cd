@@ -1,38 +1,39 @@
-name: CI - Node.js Build
+name: Frontend CI/CD
 
 on:
   push:
-    branches: ["**"]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
-      - name: Check Node version
-        run: node -v
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
-      - name: Check npm version
-        run: npm -v
+      - name: Cache Next.js
+        uses: actions/cache@v3
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-next-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
-        run: npm run build  
-
-      - name: Run project
-        run: npm start
+        run: npm run build
 
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
