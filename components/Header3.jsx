@@ -16,7 +16,7 @@ const Header3 = () => {
           <input
             type="text"
             placeholder='Search...'
-            className='rounded-l-full w-full md:w-96 h-14 md:h-16 outline-none px-3 text-lg border-r-0 md:border-r-2'
+            className='rounded-l-full w-full md:w-120 h-14 md:h-16 outline-none px-3 text-lg border-r-0 md:border-r-2'
             onChange={(e) => { setCity(e.target.value) }}
           />
 
